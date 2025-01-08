@@ -77,6 +77,14 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+
 ---
 ##################################################################################################
 # Ratings service
@@ -128,6 +136,14 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+
 ---
 ##################################################################################################
 # Reviews service
@@ -187,6 +203,13 @@ spec:
               mountPath: /tmp
             - name: wlp-output
               mountPath: /opt/ibm/wlp/output
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
       volumes:
         - name: wlp-output
           emptyDir: {}
@@ -227,6 +250,13 @@ spec:
               mountPath: /tmp
             - name: wlp-output
               mountPath: /opt/ibm/wlp/output
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
       volumes:
         - name: wlp-output
           emptyDir: {}
@@ -267,6 +297,13 @@ spec:
               mountPath: /tmp
             - name: wlp-output
               mountPath: /opt/ibm/wlp/output
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
       volumes:
         - name: wlp-output
           emptyDir: {}
@@ -330,6 +367,13 @@ spec:
           volumeMounts:
             - name: tmp
               mountPath: /tmp
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
       volumes:
         - name: tmp
           emptyDir: {}
