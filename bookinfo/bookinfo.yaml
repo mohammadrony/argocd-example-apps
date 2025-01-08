@@ -125,6 +125,8 @@ spec:
       version: v1
   template:
     metadata:
+      annotations:
+        instrumentation.opentelemetry.io/inject-nodejs: opentelemetry/nodejs-instrumentation
       labels:
         app: ratings
         version: v1
@@ -132,8 +134,8 @@ spec:
       serviceAccountName: bookinfo-ratings
       containers:
         - name: ratings
-          image: docker.io/istio/examples-bookinfo-ratings-v1:1.20.2
-          imagePullPolicy: IfNotPresent
+          image: docker.io/mohammadrony/rating:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 9080
           resources:
@@ -184,6 +186,8 @@ spec:
       version: v1
   template:
     metadata:
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: opentelemetry/java-instrumentation
       labels:
         app: reviews
         version: v1
@@ -231,6 +235,8 @@ spec:
       version: v2
   template:
     metadata:
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: opentelemetry/java-instrumentation
       labels:
         app: reviews
         version: v2
@@ -278,6 +284,8 @@ spec:
       version: v3
   template:
     metadata:
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: opentelemetry/java-instrumentation
       labels:
         app: reviews
         version: v3
